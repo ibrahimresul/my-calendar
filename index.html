@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajandam</title>
+    <link rel="icon" type="image/png" href="https://png.pngtree.com/png-vector/20250429/ourmid/pngtree-3d-red-calendar-icon-with-time-showing-schedule-png-image_15963428.png">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-ocean">
+
+    <!-- Tema Butonu -->
+    <button id="settings-toggle" class="settings-btn"><i class="fas fa-palette"></i></button>
+    <div id="settings-panel" class="settings-panel">
+        <h3>Tema Seç</h3>
+        <div class="theme-options">
+            <button onclick="setTheme('ocean')" class="t-btn btn-ocean">Okyanus</button>
+            <button onclick="setTheme('forest')" class="t-btn btn-forest">Orman</button>
+            <button onclick="setTheme('sunset')" class="t-btn btn-sunset">Gün Batımı</button>
+            <button onclick="setTheme('night')" class="t-btn btn-night">Gece</button>
+        </div>
+    </div>
+
+    <!-- Admin Butonu -->
+    <button id="admin-toggle" class="admin-btn"><i class="fas fa-user-shield"></i></button>
+
+    <!-- Admin Modal -->
+    <div id="admin-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-modal">&times;</span>
+            <h2><i class="fas fa-database"></i> Admin Paneli</h2>
+            <hr>
+            <div id="firebase-status" class="firebase-status">
+                <span id="status-dot" class="status-dot"></span>
+                <span id="status-text">Bağlanılıyor...</span>
+            </div>
+            <div class="admin-stats">
+                <p>Toplam Kayıt: <span id="total-events-count">0</span></p>
+            </div>
+            <div class="admin-actions">
+                <button onclick="exportData()" class="admin-action-btn export-btn"><i class="fas fa-download"></i> Yedekle (JSON)</button>
+                <button onclick="clearAllData()" class="admin-action-btn delete-btn"><i class="fas fa-trash-alt"></i> Tümünü Sıfırla</button>
+            </div>
+            <h3>Tüm Kayıtlar</h3>
+            <div class="all-events-table-wrapper">
+                <table id="all-events-table">
+                    <thead>
+                        <tr>
+                            <th>Kayıt Adı</th>
+                            <th>Tarih</th>
+                            <th>Kategori</th>
+                            <th>Kaynak</th>
+                            <th>İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody id="all-events-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ana Layout -->
+    <div class="main-layout">
+        <!-- Sol Panel -->
+        <div class="left-panel glass">
+            <header>
+                <h1>Ajandam</h1>
+                <p id="current-date"></p>
+            </header>
+            <section class="todo-area">
+                <h3 id="selected-day-label">📅 Plan Oluştur</h3>
+                <div class="input-row">
+                    <label>Kategori:</label>
+                    <select id="event-category">
+                        <option value="event">🎉 Etkinlik</option>
+                        <option value="urgent">🔥 Önemli</option>
+                        <option value="holiday">🏖️ Tatil</option>
+                        <option value="work">💼 İş</option>
+                    </select>
+                </div>
+                <div class="input-row">
+                    <label>Tarih Aralığı:</label>
+                    <div class="date-group">
+                        <input type="date" id="start-date">
+                        <input type="date" id="end-date">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="time-header">
+                        <label>Saat Aralığı:</label>
+                        <label class="all-day-label">
+                            <input type="checkbox" id="all-day-checkbox" onchange="toggleTimeInputs()"> Tüm Gün
+                        </label>
+                    </div>
+                    <div class="time-group" id="time-inputs">
+                        <input type="time" id="start-time" value="09:00">
+                        <input type="time" id="end-time" value="10:00">
+                    </div>
+                </div>
+                <div class="todo-input-group">
+                    <input type="text" id="todo-input" placeholder="Etkinlik başlığı...">
+                    <button onclick="addTodo()" class="theme-bg">Ekle</button>
+                </div>
+                <ul id="todo-list"></ul>
+            </section>
+        </div>
+
+        <!-- Sağ Panel: Takvim -->
+        <div class="right-panel glass">
+            <div id="calendar"></div>
+        </div>
+    </div>
+
+    <!-- Kütüphaneler -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/tr.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
