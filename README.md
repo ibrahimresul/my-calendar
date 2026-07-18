@@ -5,6 +5,8 @@ MyCalendar is a modern, responsive, and feature-rich personalized agenda web app
 <img width="1907" height="861" alt="ajanda-genel" src="https://github.com/user-attachments/assets/add9e0bc-c441-48af-b5fa-0dd3faaffecb" />
 <img width="1901" height="851" alt="ajanda-karanlıktema" src="https://github.com/user-attachments/assets/a3fde9ce-034c-48f2-818a-510e29832f6d" />
 <img width="1886" height="868" alt="ajanda-örnek-orman tema" src="https://github.com/user-attachments/assets/f3985377-cbf7-48fc-917b-7d162da0435c" />
+<img width="566" height="288" alt="image" src="https://github.com/user-attachments/assets/3bec9a61-6ee9-47bc-ac09-b98b2f8e6db5" />
+
 
 ---
 
