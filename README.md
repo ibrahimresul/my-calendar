@@ -13,6 +13,7 @@ MyCalendar is a modern, responsive, and feature-rich personalized agenda web app
 * 🛡️ **Admin Dashboard**: Comprehensive control panel to monitor total records, export all events as JSON backup, or wipe local/cloud data safely.
 
 ---
+<img width="1907" height="861" alt="ajanda-genel" src="https://github.com/user-attachments/assets/81c8e6a6-f393-4582-bf6a-aa7c40103890" />
 
 ## 🛠️ Tech Stack
 
