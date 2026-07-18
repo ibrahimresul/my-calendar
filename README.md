@@ -2,6 +2,9 @@
 
 MyCalendar is a modern, responsive, and feature-rich personalized agenda web application designed with an elegant glassmorphic UI. It offers dynamic theme switching, event management with category color codes, and seamless data synchronization using both LocalStorage and Firebase Firestore.
 
+<img width="1907" height="861" alt="ajanda-genel" src="https://github.com/user-attachments/assets/add9e0bc-c441-48af-b5fa-0dd3faaffecb" />
+<img width="1901" height="851" alt="ajanda-karanlıktema" src="https://github.com/user-attachments/assets/a3fde9ce-034c-48f2-818a-510e29832f6d" />
+<img width="1886" height="868" alt="ajanda-örnek-orman tema" src="https://github.com/user-attachments/assets/f3985377-cbf7-48fc-917b-7d162da0435c" />
 ---
 
 ## 🚀 Features
@@ -13,7 +16,7 @@ MyCalendar is a modern, responsive, and feature-rich personalized agenda web app
 * 🛡️ **Admin Dashboard**: Comprehensive control panel to monitor total records, export all events as JSON backup, or wipe local/cloud data safely.
 
 ---
-<img width="1907" height="861" alt="ajanda-genel" src="https://github.com/user-attachments/assets/81c8e6a6-f393-4582-bf6a-aa7c40103890" />
+
 
 ## 🛠️ Tech Stack
 
