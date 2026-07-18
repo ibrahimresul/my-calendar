@@ -26,4 +26,4 @@ MyCalendar is a modern, responsive, and feature-rich personalized agenda web app
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/MyCalendar.git](https://github.com/ibrahimresul/MyCalendar.git)
+   git clone [https://github.com/ibrahimresul/MyCalendar.git](https://github.com/ibrahimresul/MyCalendar.git)
